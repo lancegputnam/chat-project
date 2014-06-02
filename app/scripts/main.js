@@ -1,11 +1,16 @@
+'use strict';
 
+//this variable is for the username 
+var user = "Bob LobLaw";
+
+//variable for incoming messages
 var getBabblebox = _.template($('.messages').text());
 
 // should grab array of data and send it to the message box
 function renderPost(posts){
     posts.forEach(function(chat){
             var rendered = getBabblebox(chat);
-    //append the message box window and puts the data in the window
+    //prepend the message box window and puts the data in the window
             $('.babblebox').prepend(rendered);
     });
 }
@@ -14,28 +19,31 @@ $.getJSON('http://tiny-pizza-server.herokuapp.com/collections/chat-messages').do
 	renderPost(chat);
 });
 
-
-//sends message to the server
-function updateChat(info) {
-	$.post('http://tiny-pizza-server.herokuapp.com/collections/chat-messages', info);
+// this constructor creates a message 
+function Message(user, message, time) {
+  this.user = user || '';
+  this.message = message || '';
+  this.time = time || '';
+  this.meta = '';
 }
 
+//this sends my message object to the server//
+function renderChat(info) {
+  $.post('http://tiny-pizza-server.herokuapp.com/collections/chat-messages', info);
+}
+
+//when the submit button is clicked, it creates and instance of the message //
 $('.submit').click(function() {
-	var babbleMessage = $('.enterMessage').val();
-	$('.enterMessage').val('');
-	var time = Date.now();
-	var outgoing = new Message(user, message, time);
-
-	updateChat(outgoing);
-
+// the message in the input box is assigned to the mainbox //
+  	var message = $('.enterMessage').val();
+  	$('.enterMessage').val('');
+//the variable inputs the current time//
+  	var time = Date.now();
+//the variable creates a new, outgoing instance
+  	var outgoing = new Message(user, message, time);
+//this sends the outgoing message to the server from above //
+  	renderChat(outgoing);
 });
 
-
-// This is creating a message to be sent 
-function babbleMessage (user,message,time) {
-    this.user = user || '';
-    this.message = message || '';
-    this.time = time || '';
-    this.meta = 'babblebox';
-}
-
+//reloads every one second//
+setInterval(renderPost, 1000);
