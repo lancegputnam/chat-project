@@ -2,7 +2,7 @@
 
 (function () {
     'use strict';
-
+// are these false positives???
     describe("login event", function () {
         it('should not accept an empty string or max character as a user name', function () {
         	var emptyString = function() {
@@ -63,3 +63,6 @@
     	});
     });
 })();
+
+/// test the send button. 
+/// test to fetch messages. 

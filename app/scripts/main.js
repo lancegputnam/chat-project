@@ -15,12 +15,14 @@ function renderPost(posts){
     });
 }
 
+function refreshChat () {
 $.getJSON('http://tiny-pizza-server.herokuapp.com/collections/chat-messages').done(function(chat){
 	renderPost(chat);
 });
+}
 
 // this constructor creates a message 
-function Message(user, message, time) {
+function Message(user, message, time, meta) {
   this.user = user || '';
   this.message = message || '';
   this.time = time || '';
@@ -34,7 +36,7 @@ function renderChat(info) {
 
 //when the submit button is clicked, it creates and instance of the message //
 $('.submit').click(function() {
-// the message in the input box is assigned to the mainbox //
+// the message in the input box is assigned to the mainbox. the .val gets the value of the elements //
   	var message = $('.enterMessage').val();
   	$('.enterMessage').val('');
 //the variable inputs the current time//
@@ -45,5 +47,9 @@ $('.submit').click(function() {
   	renderChat(outgoing);
 });
 
-//reloads every one second//
-// setInterval($.getJSON, 1000);
+//unable to get page to automatically refresh  
+setInterval(function () {
+	refreshChat() }
+	,5000);
+
+// need to use timeout with the scroll top button 
