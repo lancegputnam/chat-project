@@ -6,11 +6,11 @@ var user = "Bob LobLaw";
 //variable for incoming messages
 var getBabblebox = _.template($('.messages').text());
 
-// should grab array of data and send it to the message box
+// this grabs data, along with $.getJSON, from tiny server and inputs it into the message container. 
 function renderPost(posts){
     posts.forEach(function(chat){
             var rendered = getBabblebox(chat);
-    //prepend the message box window and puts the data in the window
+    // this prepends the messages into the babblebox container
             $('.babblebox').prepend(rendered);
     });
 }
@@ -46,4 +46,4 @@ $('.submit').click(function() {
 });
 
 //reloads every one second//
-setInterval(renderPost, 1000);
+// setInterval($.getJSON, 1000);
