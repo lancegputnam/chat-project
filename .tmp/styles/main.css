@@ -19911,12 +19911,13 @@ body {
   }
 }
 
-.container {
+.babblebox {
   width: 1000px;
   height: 600px;
   background-color: white;
   border-radius: 40px;
   margin-top: 40px;
+  margin-left: 60px;
 }
 
 @media -sass-debug-info {
@@ -19925,7 +19926,7 @@ body {
   }
 
   line {
-    font-family: \0000339;
+    font-family: \0000340;
   }
 }
 
@@ -19941,7 +19942,7 @@ body {
   }
 
   line {
-    font-family: \0000344;
+    font-family: \0000345;
   }
 }
 
@@ -19956,7 +19957,7 @@ body {
   }
 
   line {
-    font-family: \0000349;
+    font-family: \0000350;
   }
 }
 
@@ -19972,7 +19973,7 @@ body {
   }
 
   line {
-    font-family: \0000355;
+    font-family: \0000356;
   }
 }
 
@@ -19993,7 +19994,7 @@ body {
   }
 
   line {
-    font-family: \0000369;
+    font-family: \0000370;
   }
 }
 
@@ -20009,7 +20010,7 @@ body {
   }
 
   line {
-    font-family: \0000379;
+    font-family: \0000380;
   }
 }
 
@@ -20024,7 +20025,7 @@ body {
   }
 
   line {
-    font-family: \0000383;
+    font-family: \0000384;
   }
 }
 
@@ -20040,7 +20041,7 @@ body {
   }
 
   line {
-    font-family: \0000389;
+    font-family: \0000390;
   }
 }
 
@@ -20061,7 +20062,7 @@ body {
   }
 
   line {
-    font-family: \00003103;
+    font-family: \00003104;
   }
 }
 
@@ -20069,4 +20070,89 @@ body {
   background: #16ab2c;
   background-image: linear-gradient(to bottom, #16ab2c, #148c24);
   text-decoration: none;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/lanceputnam\/Projects\/chat-project\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003114;
+  }
+}
+
+.message-container {
+  position: relative;
+  display: block;
+  margin: 10px 0 10px 0;
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/lanceputnam\/Projects\/chat-project\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003121;
+  }
+}
+
+.message-container img {
+  max-width: 300px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/lanceputnam\/Projects\/chat-project\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003125;
+  }
+}
+
+.message-container .user {
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  margin-left: 10px;
+  width: 120px;
+  text-align: left;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/lanceputnam\/Projects\/chat-project\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003134;
+  }
+}
+
+.message-container .message {
+  display: inline-block;
+  margin-left: 200px;
+  text-align: left;
+  width: 300px;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/lanceputnam\/Projects\/chat-project\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003141;
+  }
+}
+
+.message-container .time {
+  display: inline-block;
+  width: 335px;
+  position: absolute;
+  text-align: right;
 }

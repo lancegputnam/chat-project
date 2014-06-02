@@ -28,12 +28,13 @@ body {
     margin-top: -13px;
 }
 
-.container {
+.babblebox {
     width: 1000px;
     height: 600px;
     background-color: white;
     border-radius: 40px;
     margin-top: 40px;
+    margin-left: 60px;
 }
 
 .usernamebox {
@@ -109,3 +110,37 @@ body {
     background-image: linear-gradient(to bottom, #16ab2c, #148c24);
     text-decoration: none;
 }}
+
+.message-container {
+    position: relative;
+    display: block;
+    margin: 10px 0 10px 0;
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+
+    & img {
+    max-width: 300px;
+}}
+
+.message-container .user {
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 10px;
+    width: 120px;
+    text-align: left;
+}
+
+.message-container .message {
+    display: inline-block;
+    margin-left: 200px;
+    text-align: left;
+    width: 300px;
+}
+
+.message-container .time {
+    display: inline-block;
+    width: 335px;
+    position: absolute;
+    text-align: right;
+}
